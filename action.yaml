@@ -1,0 +1,17 @@
+# action.yml
+name: 'rundeck-cli'
+description: 'Github action to manage jobs in rundeck'
+author: gabryel8818 <gabriel_melo88@hotmail.com>
+branding:
+  icon: terminal
+  color: black
+inputs:
+  args:
+    description: 'Rundeck cli args'
+    required: false
+    default: 'version'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
